@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const videosDir = path.join(__dirname, 'previews');
-const outputDir = path.join(__dirname, 'docs');
+const outputDir = path.join(__dirname, 'gh-pages');
 const templateFile = path.join(__dirname, 'template.html');
 const videoTemplateFile = path.join(__dirname, 'video_template.html');
 const indexFile = path.join(outputDir, 'index.html');
