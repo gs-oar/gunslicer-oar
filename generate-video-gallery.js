@@ -20,7 +20,7 @@ const videoFiles = fs.readdirSync(videosDir).filter(file => supportedFormats.inc
 
 // Function to create individual video pages
 const createVideoPage = (videoFile) => {
-  const videoPath = `videos/${videoFile}`;
+  const videoPath = `previews/${videoFile}`;
   const videoTitle = videoFile;
   let videoElement;
 
@@ -58,9 +58,9 @@ const videoListHtml = videoFiles.map(videoFile => {
       <h2>${videoFile}</h2>
       <a href="${videoFile}.html">
         ${videoFile.endsWith('.gif') ? 
-          `<img src="videos/${videoFile}" alt="${videoFile}">` :
+          `<img src="previews/${videoFile}" alt="${videoFile}">` :
           `<video width="600" controls>
-            <source src="videos/${videoFile}" type="video/${path.extname(videoFile).substring(1)}">
+            <source src="previews/${videoFile}" type="video/${path.extname(videoFile).substring(1)}">
             Your browser does not support the video tag.
           </video>`
         }
