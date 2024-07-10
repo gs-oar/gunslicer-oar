@@ -1,5 +1,7 @@
 # Gunslicer Open Animations Replacer Pack
 
+![GS_OAR](img/gunsliceroar.jpg)
+
 This repository hosts code and animation files for Gunslicer OAR animations pack and a video preview gallery that automatically updates and serves the previews via GitHub Pages. The videos are stored in the `previews` branch, and the gallery is generated to and deployed from the `gh-pages` branch.
 
 ## Workflow Overview
