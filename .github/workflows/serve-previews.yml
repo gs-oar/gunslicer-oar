@@ -1,9 +1,10 @@
-name: Update GitHub Pages
+name: Update GitHub Pages for Previews
 
 on:
   push:
     paths:
       - 'previews/**'
+  workflow_dispatch:
 
 jobs:
   update-pages:
