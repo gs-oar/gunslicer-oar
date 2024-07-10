@@ -1,18 +1,31 @@
-name: Update GitHub Pages for Previews
+name: Update GitHub Pages
 
 on:
   push:
-    paths:
-      - 'previews/**'
-  workflow_dispatch:
+    branches:
+      - previews
+  workflow_dispatch:  # Manual trigger
 
 jobs:
   update-pages:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
+    - name: Checkout previews
       uses: actions/checkout@v4
+      with:
+        ref: previews
+
+    - name: Checkout gh-pages branch
+      uses: actions/checkout@v4
+      with:
+        ref: gh-pages
+        path: gh-pages
+
+    - name: Copy videos to gh-pages
+      run: |
+        mkdir -p gh-pages/previews
+        cp -R previews/* gh-pages/previews/
 
     - name: Set up Node.js
       uses: actions/setup-node@v4
@@ -29,4 +42,4 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./docs
+        publish_dir: gh-pages
