@@ -2,8 +2,9 @@ name: Update GitHub Pages
 
 on:
   push:
-    branches:
-      - previews
+    branches-ignore:
+      - main
+      - gh-pages
   workflow_dispatch:  # Manual trigger
 
 jobs:
