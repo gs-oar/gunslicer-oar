@@ -6,6 +6,50 @@
     <title>Video Gallery</title>
 </head>
 <body>
+    <h2>Add a New Video</h2>
+    <form id="uploadForm" enctype="multipart/form-data">
+        <input type="file" id="videoFile" name="videoFile" accept="video/*" required>
+        <input type="submit" value="Upload Video">
+    </form>
+
+    <script>
+        document.getElementById('uploadForm').onsubmit = async function(event) {
+            event.preventDefault();
+
+            const fileInput = document.getElementById('videoFile');
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+
+            reader.onload = async function() {
+                const base64Video = reader.result.split(',')[1]; // Get base64 encoded string without metadata
+                const videoName = file.name;
+
+                const response = await fetch('https://api.github.com/repos/gs-oar/gunslicer-oar/actions/workflows/upload-video.yml/dispatches', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/vnd.github.v3+json',
+                        'Authorization': `token YOUR_GITHUB_PERSONAL_ACCESS_TOKEN`
+                    },
+                    body: JSON.stringify({
+                        ref: 'main',
+                        inputs: {
+                            'video-file': base64Video,
+                            'video-name': videoName
+                        }
+                    })
+                });
+
+                if (response.ok) {
+                    alert('Video uploaded successfully!');
+                } else {
+                    alert('Failed to upload video.');
+                }
+            };
+
+            reader.readAsDataURL(file);
+        };
+    </script>
+
     <h1>Video Gallery</h1>
     <!-- Video List -->
     <div id="video-list">
