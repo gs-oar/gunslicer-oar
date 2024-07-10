@@ -1,0 +1,29 @@
+{
+    "name": "Sneak_Equip",
+    "priority": 800101,
+    "replaceOnLoop": false,
+    "conditions": [
+        {
+            "condition": "IsFemale",
+            "requiredVersion": "1.0.0.0"
+        },
+        {
+            "condition": "IsActorBase",
+            "requiredVersion": "1.0.0.0",
+            "Actor base": {
+                "pluginName": "Skyrim.esm",
+                "formID": "7"
+            }
+        },
+        {
+            "condition": "IsWeaponDrawn",
+            "requiredVersion": "1.0.0.0",
+            "disabled": true,
+            "negated": true
+        },
+        {
+            "condition": "IsSneaking",
+            "requiredVersion": "1.0.0.0"
+        }
+    ]
+}

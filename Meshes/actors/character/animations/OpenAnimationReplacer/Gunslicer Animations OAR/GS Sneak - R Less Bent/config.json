@@ -1,0 +1,26 @@
+{
+    "name": "GS Sneak - R Less Bent Knees",
+    "priority": 800010,
+    "hasCustomBlendTimeOnLoop": true,
+    "keepRandomResultsOnLoop": true,
+    "blendTimeOnLoop": 0.2,
+    "conditions": [
+        {
+            "condition": "IsActorBase",
+            "requiredVersion": "1.0.0.0",
+            "Actor base": {
+                "pluginName": "Skyrim.esm",
+                "formID": "7"
+            }
+        },
+        {
+            "condition": "IsWeaponDrawn",
+            "requiredVersion": "1.0.0.0",
+            "negated": true
+        },
+        {
+            "condition": "IsFemale",
+            "requiredVersion": "1.0.0.0"
+        }
+    ]
+}
