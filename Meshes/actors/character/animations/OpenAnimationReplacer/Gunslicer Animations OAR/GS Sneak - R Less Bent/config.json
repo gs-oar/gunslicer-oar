@@ -1,6 +1,6 @@
 {
     "name": "GS Sneak - R Less Bent Knees",
-    "priority": 800010,
+    "priority": 800100,
     "hasCustomBlendTimeOnLoop": true,
     "keepRandomResultsOnLoop": true,
     "blendTimeOnLoop": 0.2,
