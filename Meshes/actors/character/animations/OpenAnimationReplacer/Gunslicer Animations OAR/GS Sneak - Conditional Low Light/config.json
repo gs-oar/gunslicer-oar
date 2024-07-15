@@ -1,0 +1,34 @@
+{
+    "name": "GS Sneak - R Conditional Up",
+    "priority": 800100,
+    "hasCustomBlendTimeOnLoop": true,
+    "keepRandomResultsOnLoop": true,
+    "blendTimeOnLoop": 0.2,
+    "conditions": [
+        {
+            "condition": "IsActorBase",
+            "requiredVersion": "1.0.0.0",
+            "Actor base": {
+                "pluginName": "Skyrim.esm",
+                "formID": "07"
+            }
+        },
+        {
+            "condition": "IsFemale",
+            "requiredVersion": "1.0.0.0"
+        },
+        {
+            "condition": "IsWeaponDrawn",
+            "requiredVersion": "1.0.0.0",
+            "negated": true
+        },
+        {
+            "condition": "LightLevel",
+            "requiredVersion": "2.0.0.0",
+            "Comparison": "<",
+            "Numeric value": {
+                "value": 100.0
+            }
+        }
+    ]
+}
