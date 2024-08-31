@@ -1,0 +1,23 @@
+{
+    "name": "Dialogue",
+    "priority": 800053,
+    "replaceOnLoop": false,
+    "conditions": [
+        {
+            "condition": "IsFemale",
+            "requiredVersion": "1.0.0.0"
+        },
+        {
+            "condition": "HasKeyword",
+            "requiredVersion": "1.0.0.0",
+            "Keyword": {
+                "editorID": "ElderNPC"
+            }
+        },
+        {
+            "condition": "IsChild",
+            "requiredVersion": "1.0.0.0",
+            "negated": true
+        }
+    ]
+}
