@@ -1,0 +1,149 @@
+{
+    "name": "Dual_Destruction_Jump",
+    "priority": 800081,
+    "replaceOnLoop": false,
+    "conditions": [
+        {
+            "condition": "IsFemale",
+            "requiredVersion": "1.0.0.0"
+        },
+        {
+            "condition": "IsActorBase",
+            "requiredVersion": "1.0.0.0",
+            "Actor base": {
+                "pluginName": "Skyrim.esm",
+                "formID": "7"
+            }
+        },
+        {
+            "condition": "IsEquippedType",
+            "requiredVersion": "1.0.0.0",
+            "Type": {
+                "value": 14.0
+            },
+            "Left hand": false
+        },
+        {
+            "condition": "IsEquippedType",
+            "requiredVersion": "1.0.0.0",
+            "Type": {
+                "value": 14.0
+            },
+            "Left hand": true
+        },
+        {
+            "condition": "IsWeaponDrawn",
+            "requiredVersion": "1.0.0.0"
+        },
+        {
+            "condition": "OR",
+            "requiredVersion": "1.0.0.0",
+            "disabled": true,
+            "Conditions": [
+                {
+                    "condition": "IsEquippedType",
+                    "requiredVersion": "1.0.0.0",
+                    "Type": {
+                        "value": 14.0
+                    },
+                    "Left hand": false
+                },
+                {
+                    "condition": "IsEquippedType",
+                    "requiredVersion": "1.0.0.0",
+                    "Type": {
+                        "value": 12.0
+                    },
+                    "Left hand": false
+                },
+                {
+                    "condition": "IsEquippedType",
+                    "requiredVersion": "1.0.0.0",
+                    "Type": {
+                        "value": 13.0
+                    },
+                    "Left hand": false
+                },
+                {
+                    "condition": "IsEquippedType",
+                    "requiredVersion": "1.0.0.0",
+                    "Type": {
+                        "value": 15.0
+                    },
+                    "Left hand": false
+                },
+                {
+                    "condition": "IsEquippedType",
+                    "requiredVersion": "1.0.0.0",
+                    "Type": {
+                        "value": 16.0
+                    },
+                    "Left hand": false
+                },
+                {
+                    "condition": "IsEquippedType",
+                    "requiredVersion": "1.0.0.0",
+                    "Type": {
+                        "value": 17.0
+                    },
+                    "Left hand": false
+                }
+            ]
+        },
+        {
+            "condition": "OR",
+            "requiredVersion": "1.0.0.0",
+            "disabled": true,
+            "Conditions": [
+                {
+                    "condition": "IsEquippedType",
+                    "requiredVersion": "1.0.0.0",
+                    "Type": {
+                        "value": 14.0
+                    },
+                    "Left hand": true
+                },
+                {
+                    "condition": "IsEquippedType",
+                    "requiredVersion": "1.0.0.0",
+                    "Type": {
+                        "value": 12.0
+                    },
+                    "Left hand": true
+                },
+                {
+                    "condition": "IsEquippedType",
+                    "requiredVersion": "1.0.0.0",
+                    "Type": {
+                        "value": 13.0
+                    },
+                    "Left hand": true
+                },
+                {
+                    "condition": "IsEquippedType",
+                    "requiredVersion": "1.0.0.0",
+                    "Type": {
+                        "value": 15.0
+                    },
+                    "Left hand": true
+                },
+                {
+                    "condition": "IsEquippedType",
+                    "requiredVersion": "1.0.0.0",
+                    "Type": {
+                        "value": 16.0
+                    },
+                    "Left hand": true
+                },
+                {
+                    "condition": "IsEquippedType",
+                    "requiredVersion": "1.0.0.0",
+                    "Type": {
+                        "value": 17.0
+                    },
+                    "Left hand": true
+                }
+            ]
+        }
+    ]
+}
