@@ -33,7 +33,7 @@ jobs:
         node-version: '14'
 
     - name: Install dependencies
-      run: npm install
+      run: npm install fluent-ffmpeg
 
     - name: Generate video gallery
       run: node generate-video-gallery.js

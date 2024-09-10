@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const ffmpeg = require('fluent-ffmpeg');
 
 const videosDir = path.join(__dirname, 'previews');
 const outputDir = path.join(__dirname, 'gh-pages');
@@ -51,24 +52,38 @@ const createVideoPage = (videoFile) => {
   console.log(`Video page generated: ${outputVideoFile}`);
 };
 
-// Generate HTML for each video and create individual pages
-const videoListHtml = videoFiles.map(videoFile => {
+// Add this function to your generate-video-gallery.js file
+function generatePreview(videoFile) {
+  return new Promise((resolve, reject) => {
+    const inputPath = path.join(videosDir, videoFile);
+    const outputPath = path.join(outputDir, 'previews', `${path.parse(videoFile).name}.jpg`);
+
+    ffmpeg(inputPath)
+      .screenshots({
+        timestamps: ['00:00:00'],
+        filename: path.basename(outputPath),
+        folder: path.dirname(outputPath),
+        size: '300x?'
+      })
+      .on('end', () => resolve(outputPath))
+      .on('error', (err) => reject(err));
+  });
+}
+
+// Modify the videoFiles processing to generate previews
+const videoListHtml = await Promise.all(videoFiles.map(async (videoFile) => {
   createVideoPage(videoFile);
+  const previewPath = await generatePreview(videoFile);
+  const previewSrc = path.relative(outputDir, previewPath);
   return `
     <div class="video-item">
       <a href="${videoFile}.html">
         <h2>${videoFile}</h2>
-        ${videoFile.endsWith('.gif') ? 
-          `<img src="previews/${videoFile}" alt="${videoFile}">` :
-          `<video muted autoplay loop>
-            <source src="previews/${videoFile}" type="video/${path.extname(videoFile).substring(1)}">
-            Your browser does not support the video tag.
-          </video>`
-        }
+        <img src="${previewSrc}" alt="${videoFile}">
       </a>
     </div>
   `;
-}).join('\n');
+}));
 
 // Read the template file
 const template = fs.readFileSync(templateFile, 'utf8');
