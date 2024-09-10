@@ -43,8 +43,8 @@ const createVideoPage = (videoFile) => {
 
   // Replace placeholders with actual values
   videoTemplate = videoTemplate.replace(/\{\{ video_title \}\}/g, videoTitle);
-  videoTemplate = videoTemplate.replace(/\{\{ video_element \}\}/g, videoElement);
-
+  videoTemplate = videoTemplate.replace(/\{\{ base_url \}\}/g, baseUrl);
+  
   // Write the individual video HTML file
   const outputVideoFile = path.join(outputDir, `${videoFile}.html`);
   fs.writeFileSync(outputVideoFile, videoTemplate);
@@ -77,7 +77,7 @@ async function generateGallery() {
     const previewSrc = path.relative(outputDir, previewPath);
     return `
       <div class="video-item">
-        <a href="${videoFile}.html">
+        <a href="${baseUrl}/${videoFile}.html">
           <h2>${videoFile}</h2>
           <img src="${previewSrc}" alt="${videoFile}">
         </a>
