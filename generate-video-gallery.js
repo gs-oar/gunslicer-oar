@@ -70,28 +70,33 @@ function generatePreview(videoFile) {
   });
 }
 
-// Modify the videoFiles processing to generate previews
-const videoListHtml = await Promise.all(videoFiles.map(async (videoFile) => {
-  createVideoPage(videoFile);
-  const previewPath = await generatePreview(videoFile);
-  const previewSrc = path.relative(outputDir, previewPath);
-  return `
-    <div class="video-item">
-      <a href="${videoFile}.html">
-        <h2>${videoFile}</h2>
-        <img src="${previewSrc}" alt="${videoFile}">
-      </a>
-    </div>
-  `;
-}));
+async function generateGallery() {
+  // Modify the videoFiles processing to generate previews
+  const videoListHtml = await Promise.all(videoFiles.map(async (videoFile) => {
+    createVideoPage(videoFile);
+    const previewPath = await generatePreview(videoFile);
+    const previewSrc = path.relative(outputDir, previewPath);
+    return `
+      <div class="video-item">
+        <a href="${videoFile}.html">
+          <h2>${videoFile}</h2>
+          <img src="${previewSrc}" alt="${videoFile}">
+        </a>
+      </div>
+    `;
+  }));
 
-// Read the template file
-const template = fs.readFileSync(templateFile, 'utf8');
+  // Read the template file
+  const template = fs.readFileSync(templateFile, 'utf8');
 
-// Replace the placeholder with the generated video list HTML
-const outputHtml = template.replace('{{ video_list }}', videoListHtml);
+  // Replace the placeholder with the generated video list HTML
+  const outputHtml = template.replace('{{ video_list }}', videoListHtml);
 
-// Write the output HTML to the output directory
-fs.writeFileSync(indexFile, outputHtml);
+  // Write the output HTML to the output directory
+  fs.writeFileSync(indexFile, outputHtml);
 
-console.log('Video gallery and individual pages generated successfully.');
+  console.log('Video gallery and individual pages generated successfully.');
+}
+
+// Execute the async function
+generateGallery().catch(console.error);
