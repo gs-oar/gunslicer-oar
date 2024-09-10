@@ -52,7 +52,6 @@ const createVideoPage = (videoFile) => {
   console.log(`Video page generated: ${outputVideoFile}`);
 };
 
-// Add this function to your generate-video-gallery.js file
 function generatePreview(videoFile) {
   return new Promise((resolve, reject) => {
     const inputPath = path.join(videosDir, videoFile);
@@ -90,8 +89,8 @@ async function generateGallery() {
   const template = fs.readFileSync(templateFile, 'utf8');
 
   // Replace the placeholder with the generated video list HTML
-  const outputHtml = template.replace('{{ video_list }}', videoListHtml);
-
+  const outputHtml = template.replace('{{ video_list }}', videoListHtml.join(''));
+  
   // Write the output HTML to the output directory
   fs.writeFileSync(indexFile, outputHtml);
 
