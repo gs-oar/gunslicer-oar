@@ -60,7 +60,7 @@ const videoListHtml = videoFiles.map(videoFile => {
         <h2>${videoFile}</h2>
         ${videoFile.endsWith('.gif') ? 
           `<img src="previews/${videoFile}" alt="${videoFile}">` :
-          `<video controls loop>
+          `<video muted autoplay loop>
             <source src="previews/${videoFile}" type="video/${path.extname(videoFile).substring(1)}">
             Your browser does not support the video tag.
           </video>`
