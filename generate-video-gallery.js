@@ -56,12 +56,12 @@ const createVideoPage = (videoFile) => {
 const videoListHtml = videoFiles.map(videoFile => {
   createVideoPage(videoFile);
   return `
-    <div>
-      <h2>${videoFile}</h2>
+    <div class="video-item">
       <a href="${videoFile}.html">
+        <h2>${videoFile}</h2>
         ${videoFile.endsWith('.gif') ? 
           `<img src="previews/${videoFile}" alt="${videoFile}">` :
-          `<video width="100%" height="auto" controls loop>
+          `<video controls loop>
             <source src="previews/${videoFile}" type="video/${path.extname(videoFile).substring(1)}">
             Your browser does not support the video tag.
           </video>`
