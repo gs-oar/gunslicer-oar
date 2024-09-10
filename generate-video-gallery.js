@@ -41,9 +41,9 @@ const createVideoPage = (videoFile) => {
   let videoTemplate = fs.readFileSync(videoTemplateFile, 'utf8');
 
   // Replace placeholders with actual values
-  videoTemplate = videoTemplate.replace('{{ video_title }}', videoTitle);
-  videoTemplate = videoTemplate.replace('{{ video_element }}', videoElement);
-  videoTemplate = videoTemplate.replace('{{ base_url }}', baseUrl);
+  videoTemplate = videoTemplate.replace(/\{\{ video_title \}\}/g, videoTitle);
+  videoTemplate = videoTemplate.replace(/\{\{ video_element \}\}/g, videoElement);
+  videoTemplate = videoTemplate.replace(/\{\{ base_url \}\}/g, baseUrl);
 
   // Write the individual video HTML file
   const outputVideoFile = path.join(outputDir, `${videoFile}.html`);
