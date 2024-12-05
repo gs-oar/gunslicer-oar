@@ -1,6 +1,6 @@
 {
     "name": "Unarmed",
-    "priority": 800999,
+    "priority": 800200,
     "disabled": true,
     "interruptible": true,
     "replaceOnLoop": false,
