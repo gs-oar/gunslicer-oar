@@ -1,7 +1,6 @@
 {
-    "name": "Unarmed",
-    "priority": 800200,
-    "disabled": true,
+    "name": "Unarmed_Sneak",
+    "priority": 800201,
     "interruptible": true,
     "replaceOnLoop": false,
     "conditions": [
@@ -25,5 +24,6 @@
             },
             "Left hand": false
         }
-    ]
+    ],
+    "pairedConditions": []
 }
