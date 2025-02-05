@@ -1,6 +1,6 @@
 {
-    "name": "Bar_Stool",
-    "priority": 1000000,
+    "name": "Bleedout",
+    "priority": 800052,
     "replaceOnLoop": false,
     "conditions": [
         {
