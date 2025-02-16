@@ -1,5 +1,24 @@
 {
     "name": "Gunslicer Animations OAR",
     "author": "Gunslicer",
-    "description": "Animations (Unofficial; formatted by Nuascura & BluebirdXVO)"
+    "description": "Animations (Unofficial; formatted by Nuascura & BluebirdXVO)",
+    "conditionPresets": [
+        {
+            "name": "Gunslicer_Base",
+            "conditions": [
+                {
+                    "condition": "IsFemale",
+                    "requiredVersion": "1.0.0.0"
+                },
+                {
+                    "condition": "IsActorBase",
+                    "requiredVersion": "1.0.0.0",
+                    "Actor base": {
+                        "pluginName": "Skyrim.esm",
+                        "formID": "7"
+                    }
+                }
+            ]
+        }
+    ]
 }

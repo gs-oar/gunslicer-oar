@@ -1,31 +1,17 @@
 {
-    "name": "Jump",
+    "name": "Jump_Base",
     "priority": 900001,
     "replaceOnLoop": false,
     "conditions": [
         {
-            "condition": "IsFemale",
-            "requiredVersion": "1.0.0.0"
-        },
-        {
-            "condition": "IsActorBase",
-            "requiredVersion": "1.0.0.0",
-            "Actor base": {
-                "pluginName": "Skyrim.esm",
-                "formID": "7"
-            }
+            "condition": "PRESET",
+            "requiredVersion": "2.2.0.0",
+            "Preset": "Gunslicer_Base"
         },
         {
             "condition": "OR",
             "requiredVersion": "1.0.0.0",
             "Conditions": [
-                {
-                    "condition": "IsMovementDirection",
-                    "requiredVersion": "1.0.0.0",
-                    "Direction": {
-                        "value": 1.0
-                    }
-                },
                 {
                     "condition": "IsMovementDirection",
                     "requiredVersion": "1.0.0.0",
@@ -39,6 +25,23 @@
                     "Direction": {
                         "value": 4.0
                     }
+                },
+                {
+                    "condition": "AND",
+                    "requiredVersion": "1.0.0.0",
+                    "Conditions": [
+                        {
+                            "condition": "IsMovementDirection",
+                            "requiredVersion": "1.0.0.0",
+                            "Direction": {
+                                "value": 1.0
+                            }
+                        },
+                        {
+                            "condition": "IsWeaponDrawn",
+                            "requiredVersion": "1.0.0.0"
+                        }
+                    ]
                 }
             ]
         }

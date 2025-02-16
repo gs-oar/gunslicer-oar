@@ -6,21 +6,14 @@
     "blendTimeOnLoop": 0.2,
     "conditions": [
         {
-            "condition": "IsActorBase",
-            "requiredVersion": "1.0.0.0",
-            "Actor base": {
-                "pluginName": "Skyrim.esm",
-                "formID": "7"
-            }
+            "condition": "PRESET",
+            "requiredVersion": "2.2.0.0",
+            "Preset": "Gunslicer_Base"
         },
         {
             "condition": "IsWeaponDrawn",
             "requiredVersion": "1.0.0.0",
             "negated": true
-        },
-        {
-            "condition": "IsFemale",
-            "requiredVersion": "1.0.0.0"
         }
     ]
 }

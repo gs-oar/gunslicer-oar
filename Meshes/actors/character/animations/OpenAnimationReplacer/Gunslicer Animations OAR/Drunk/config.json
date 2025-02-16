@@ -1,6 +1,6 @@
 {
-    "name": "Bar_Stool",
-    "priority": 1000000,
+    "name": "Drunk",
+    "priority": 800051,
     "replaceOnLoop": false,
     "conditions": [
         {

@@ -5,16 +5,9 @@
     "replaceOnLoop": false,
     "conditions": [
         {
-            "condition": "IsFemale",
-            "requiredVersion": "1.0.0.0"
-        },
-        {
-            "condition": "IsActorBase",
-            "requiredVersion": "1.0.0.0",
-            "Actor base": {
-                "pluginName": "Skyrim.esm",
-                "formID": "7"
-            }
+            "condition": "PRESET",
+            "requiredVersion": "2.2.0.0",
+            "Preset": "Gunslicer_Base"
         },
         {
             "condition": "IsEquippedType",
@@ -24,6 +17,5 @@
             },
             "Left hand": false
         }
-    ],
-    "pairedConditions": []
+    ]
 }
