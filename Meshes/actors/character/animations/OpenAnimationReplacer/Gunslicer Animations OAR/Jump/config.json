@@ -16,6 +16,13 @@
                     "condition": "IsMovementDirection",
                     "requiredVersion": "1.0.0.0",
                     "Direction": {
+                        "value": 1.0
+                    }
+                },
+                {
+                    "condition": "IsMovementDirection",
+                    "requiredVersion": "1.0.0.0",
+                    "Direction": {
                         "value": 2.0
                     }
                 },
@@ -25,23 +32,6 @@
                     "Direction": {
                         "value": 4.0
                     }
-                },
-                {
-                    "condition": "AND",
-                    "requiredVersion": "1.0.0.0",
-                    "Conditions": [
-                        {
-                            "condition": "IsMovementDirection",
-                            "requiredVersion": "1.0.0.0",
-                            "Direction": {
-                                "value": 1.0
-                            }
-                        },
-                        {
-                            "condition": "IsWeaponDrawn",
-                            "requiredVersion": "1.0.0.0"
-                        }
-                    ]
                 }
             ]
         }
