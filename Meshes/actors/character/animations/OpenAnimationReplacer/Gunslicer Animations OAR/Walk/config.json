@@ -1,0 +1,12 @@
+{
+    "name": "Walk",
+    "priority": 50000,
+    "replaceOnLoop": false,
+    "conditions": [
+        {
+            "condition": "PRESET",
+            "requiredVersion": "2.2.0.0",
+            "Preset": "Gunslicer_Base"
+        }
+    ]
+}

@@ -1,6 +1,6 @@
 {
-    "name": "BasicMovement",
-    "priority": 50000,
+    "name": "Sprint",
+    "priority": 50002,
     "replaceOnLoop": false,
     "conditions": [
         {
