@@ -1,5 +1,5 @@
 {
-    "name": "Dual_sword",
+    "name": "Sword Dual Wield",
     "priority": 801200,
     "replaceOnLoop": false,
     "conditions": [
@@ -7,6 +7,27 @@
             "condition": "PRESET",
             "requiredVersion": "2.2.0.0",
             "Preset": "Gunslicer_Base"
+        },
+        {
+            "condition": "IsEquippedType",
+            "requiredVersion": "1.0.0.0",
+            "Type": {
+                "value": 1.0
+            },
+            "Left hand": false
+        },
+        {
+            "condition": "IsEquippedType",
+            "requiredVersion": "1.0.0.0",
+            "Type": {
+                "value": 1.0
+            },
+            "Left hand": true
+        },
+        {
+            "condition": "IsSneaking",
+            "requiredVersion": "1.0.0.0",
+            "negated": true
         }
     ]
 }
