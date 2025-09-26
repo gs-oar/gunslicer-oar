@@ -31,6 +31,18 @@
                     }
                 }
             ]
+        },
+        {
+            "condition": "CompareValues",
+            "requiredVersion": "1.0.0.0",
+            "Value A": {
+                "graphVariable": "i1stPerson",
+                "graphVariableType": "Int"
+            },
+            "Comparison": "==",
+            "Value B": {
+                "value": 0.0
+            }
         }
     ]
 }
